@@ -1,0 +1,6 @@
+# ninja log v5
+0	1096	1776863194806501860	CMakeFiles/sw_battle_test.dir/src/main.cpp.o	67500b7741c305ac
+1096	1168	1776863194879502016	sw_battle_test	bdd10407e62907d0
+0	680	1776863194391500974	CMakeFiles/sw_battle_test.dir/src/IO/System/CommandParser.cpp.o	8245de2db8e2f7ea
+1	909	1777279672545651852	CMakeFiles/sw_battle_test.dir/src/main.cpp.o	67500b7741c305ac
+910	966	1777279672602652919	sw_battle_test	bdd10407e62907d0
