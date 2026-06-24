@@ -6,16 +6,21 @@
 namespace sw
 {
 
+	/// @brief A cell on the battlefield grid.
 	struct Position
 	{
 		uint32_t x{};
 		uint32_t y{};
 
-		/// @brief Chebyshev (8-directional) distance — one diagonal step counts as 1
-		uint32_t chebyshevDistance(const Position& other) const
+		/// @brief Chebyshev (8-directional) distance: one diagonal step counts as 1.
+		///
+		/// Natural for an 8-neighbour grid where a diagonal move costs the same as
+		/// an orthogonal one. Every spatial query in the project uses this metric so
+		/// that "distance" means the same thing for movement and for attack ranges.
+		uint32_t distanceTo(const Position& other) const
 		{
-			uint32_t dx = (x >= other.x) ? (x - other.x) : (other.x - x);
-			uint32_t dy = (y >= other.y) ? (y - other.y) : (other.y - y);
+			const uint32_t dx = (x >= other.x) ? (x - other.x) : (other.x - x);
+			const uint32_t dy = (y >= other.y) ? (y - other.y) : (other.y - y);
 			return std::max(dx, dy);
 		}
 

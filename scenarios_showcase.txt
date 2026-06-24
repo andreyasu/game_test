@@ -1,0 +1,23 @@
+// Showcase of the four extension-plan units (Tower, Healer, Crow, Mine).
+// Run: ./build/sw_battle_test --seed 42 scenarios_showcase.txt
+CREATE_MAP 20 20
+
+// Tower: stationary, shoots anything at distance 2..5
+SPAWN_TOWER 1 0 0 40 4
+
+// Crow: flying, moves 2/turn, immune to melee, shot at reduced range
+SPAWN_CROW 2 19 19 25 5
+MARCH 2 0 0
+
+// Healer: keeps an ally alive, moves when no one to heal
+SPAWN_HEALER 3 2 0 30 6
+MARCH 3 2 5
+
+// Swordsman walking into the Tower's field and the Crow's path
+SPAWN_SWORDSMAN 4 5 0 20 3
+MARCH 4 0 0
+
+// Mine: arms when a unit enters radius 2, detonates next turn over radius 3
+SPAWN_MINE 5 10 10 12
+SPAWN_HUNTER 6 14 10 14 4 2 5
+MARCH 6 10 10
